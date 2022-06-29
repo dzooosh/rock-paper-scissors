@@ -1,4 +1,5 @@
-. {
+body {
+    color: rgb(245, 219, 219);
     box-sizing: border-box;
     background-color: rgb(93, 93, 182);
 }
