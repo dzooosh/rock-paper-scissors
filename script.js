@@ -34,24 +34,25 @@ function playerInput(){
     }
 
     
-function playRound(x, y) {
+function playRound(p1, AI) {
+    // GAME RULESSS!!!
     switch (true){
-        case (x == 'rock' && y == 'paper'):
+        case (p1 == 'rock' && AI == 'paper'):
             return ("You Lose! Paper beats Rock");
             break;
-        case (x == 'paper' && y == 'rock'):
+        case (p1 == 'paper' && AI == 'rock'):
             return ("You Win! Paper beats Rock");
             break;
-        case (x == 'scissors' && y == 'paper'):
+        case (p1 == 'scissors' && AI == 'paper'):
             return ("You Win! Scissors beat paper");
             break;
-        case (x == 'paper' && y == 'scissors'):
+        case (p1 == 'paper' && AI == 'scissors'):
             return ("You Lose! Scissors beat paper");
             break;
-        case (x == 'rock' && y == 'scissors'):
+        case (p1 == 'rock' && AI == 'scissors'):
             return ("You Win! Rock beat Scissors");
             break;
-        case (x == 'scissors' && y == 'rock'):
+        case (p1 == 'scissors' && AI == 'rock'):
             return ("You Lose! Rock beat Scissors");
             break;
         default:
