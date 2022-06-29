@@ -60,7 +60,36 @@ function playRound(p1, AI) {
     }
 }
     
-const playerSelection = playerInput();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// const playerSelection = playerInput();
+// const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
 
+function game(){
+    let player = 0, comp = 0, draw = 0;
+
+    for (let i = 0; i < 5; i++) {
+        console.log(`This is game ${i+1}`);
+        const playerSelection = playerInput();
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+        let text = playRound(playerSelection, computerSelection);
+        if (text.includes("Win")){
+            player++;
+        }else if (text.includes("Lose")){
+            comp++;
+        }else if(text.includes("draw")){
+            draw++;
+        }
+
+    }
+    console.log("GAME ENDED!!!");
+    console.log("Total Score");
+    console.log(`Player: ${player} Draw: ${draw} AI: ${comp}`);
+    if (player > comp){
+        console.log("YOU WON :) !!!")
+    }else if (player < comp){
+        console.log("YOU LOSE :( ")
+    }else if (player == comp){
+        console.log("IT'S A TIE!!! :| ")
+    }
+}
