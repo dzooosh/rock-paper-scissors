@@ -86,10 +86,10 @@ function game(){
     console.log("Total Score");
     console.log(`Player: ${player} Draw: ${draw} AI: ${comp}`);
     if (player > comp){
-        console.log("YOU WON :) !!!")
+        console.log("   YOU WON!!! :)   ")
     }else if (player < comp){
-        console.log("YOU LOSE :( ")
+        console.log("   YOU LOSE :(     ")
     }else if (player == comp){
-        console.log("IT'S A TIE!!! :| ")
+        console.log("   IT'S A TIE!!! :|    ")
     }
 }
