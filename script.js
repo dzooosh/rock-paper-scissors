@@ -64,12 +64,44 @@ function playRound(p1, AI) {
 // const computerSelection = computerPlay();
 // console.log(playRound(playerSelection, computerSelection));
 
-function game(){
-    let player = 0, comp = 0, draw = 0;
+// function game(){
+//     let player = 0, comp = 0, draw = 0;
 
-    for (let i = 0; i < 5; i++) {
-        console.log(`This is game ${i+1}`);
-        const playerSelection = playerInput();
+//     // for (let i = 0; i < 5; i++) {
+//     //     console.log(`This is game ${i+1}`);
+//     let playerSelection;
+//     const computerSelection = computerPlay();
+//     console.log(playRound(playerSelection, computerSelection));
+//     let text = playRound(playerSelection, computerSelection);
+//     if (text.includes("Win")){
+//         player++;
+//     }else if (text.includes("Lose")){
+//         comp++;
+//     }else if(text.includes("draw")){
+//         draw++;
+//     }
+
+//     // }
+//     console.log("GAME ENDED!!!");
+//     console.log("Total Score");
+//     console.log(`Player: ${player} Draw: ${draw} AI: ${comp}`);
+//     if (player > comp){
+//         console.log("   YOU WON!!! :)   ")
+//     }else if (player < comp){
+//         console.log("   YOU LOSE :(     ")
+//     }else if (player == comp){
+//         console.log("   IT'S A TIE!!! :|    ")
+//     }
+// }
+
+const buttons = Array.from(document.querySelectorAll('button'));
+
+buttons.forEach((button) => {
+    
+    button.addEventListener('click', () => {
+        console.log(button.id);
+        let player = 0, comp = 0, draw = 0;
+        const playerSelection = button.id;
         const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
         let text = playRound(playerSelection, computerSelection);
@@ -80,16 +112,5 @@ function game(){
         }else if(text.includes("draw")){
             draw++;
         }
-
-    }
-    console.log("GAME ENDED!!!");
-    console.log("Total Score");
-    console.log(`Player: ${player} Draw: ${draw} AI: ${comp}`);
-    if (player > comp){
-        console.log("   YOU WON!!! :)   ")
-    }else if (player < comp){
-        console.log("   YOU LOSE :(     ")
-    }else if (player == comp){
-        console.log("   IT'S A TIE!!! :|    ")
-    }
-}
+    })
+});
