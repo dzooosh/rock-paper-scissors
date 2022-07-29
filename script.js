@@ -59,49 +59,13 @@ function playRound(p1, AI) {
             return ("This is a draw");
     }
 }
-    
-// const playerSelection = playerInput();
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
 
-// function game(){
-//     let player = 0, comp = 0, draw = 0;
+function game(){
+    let player = 0, comp = 0, draw = 0;
 
-//     // for (let i = 0; i < 5; i++) {
-//     //     console.log(`This is game ${i+1}`);
-//     let playerSelection;
-//     const computerSelection = computerPlay();
-//     console.log(playRound(playerSelection, computerSelection));
-//     let text = playRound(playerSelection, computerSelection);
-//     if (text.includes("Win")){
-//         player++;
-//     }else if (text.includes("Lose")){
-//         comp++;
-//     }else if(text.includes("draw")){
-//         draw++;
-//     }
-
-//     // }
-//     console.log("GAME ENDED!!!");
-//     console.log("Total Score");
-//     console.log(`Player: ${player} Draw: ${draw} AI: ${comp}`);
-//     if (player > comp){
-//         console.log("   YOU WON!!! :)   ")
-//     }else if (player < comp){
-//         console.log("   YOU LOSE :(     ")
-//     }else if (player == comp){
-//         console.log("   IT'S A TIE!!! :|    ")
-//     }
-// }
-
-const buttons = Array.from(document.querySelectorAll('button'));
-
-buttons.forEach((button) => {
-    
-    button.addEventListener('click', () => {
-        console.log(button.id);
-        let player = 0, comp = 0, draw = 0;
-        const playerSelection = button.id;
+    for (let i = 0; i < 5; i++) {
+        console.log(`This is game ${i+1}`);
+        let playerSelection;
         const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
         let text = playRound(playerSelection, computerSelection);
@@ -112,5 +76,70 @@ buttons.forEach((button) => {
         }else if(text.includes("draw")){
             draw++;
         }
+
+        }
+    console.log("GAME ENDED!!!");
+    console.log("Total Score");
+    console.log(`Player: ${player} Draw: ${draw} AI: ${comp}`);
+    if (player > comp){
+        console.log("   YOU WON!!! :)   ")
+    }else if (player < comp){
+        console.log("   YOU LOSE :(     ")
+    }else if (player == comp){
+        console.log("   IT'S A TIE!!! :|    ")
+    }
+}
+
+// DOM MANIPULATION
+
+let playerCount = 0, compCount = 0;
+const buttons = Array.from(document.querySelectorAll('button'));
+
+buttons.forEach((button) => {
+    
+    button.addEventListener('click', () => {
+        console.log(button.id);
+        const playerSelection = button.id;
+        const computerSelection = computerPlay();
+
+        console.log(playRound(playerSelection, computerSelection));
+
+        let text = playRound(playerSelection, computerSelection);
+        if (text.includes("Win")){
+            playerCount++;
+        }else if (text.includes("Lose")){
+            compCount++;
+        }else{
+            playerCount += 0;
+            compCount += 0;
+        }
+        console.log(playerCount)
+        console.log(compCount)
     })
 });
+const score = document.createElement('div');
+const decision = document.createElement('div');
+const board = document.querySelector('.board');
+const player = document.createElement('h2');
+const comp = document.createElement('h2');
+player.textContent = 'You play: ';
+comp.textContent = 'Computer plays: ';
+board.appendChild(player);
+board.appendChild(comp);
+
+buttons.forEach((button) => {
+    
+    button.addEventListener('click', () => {
+        playerSelection = button.id;
+        player.textContent = `You play: ${playerSelection}`;
+        comp.textContent = `Computer plays: ${computerPlay()}`;
+    })
+
+});
+// if ai or player is not equal to 5
+//     display the choices or gameplay
+//     display the scores and update 
+//     append them to the parent div
+// else
+//     remove the choices and scores
+//     add the bold text You win or lose

@@ -2,4 +2,23 @@ body {
     color: rgb(245, 219, 219);
     box-sizing: border-box;
     background-color: rgb(93, 93, 182);
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 10px 20px;
+
+}
+
+.board {
+    margin:30px 150px;
+    min-height: 150px;
+    margin-top: 10px;
+    background-color: azure;
+    color: black;
 }
