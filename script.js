@@ -35,7 +35,7 @@ function playerInput(){
 
     
 function playRound(p1, AI) {
-    // GAME RULESSS!!!
+    // GAME RULES!!!
     switch (true){
         case (p1 == 'rock' && AI == 'paper'):
             return ("You Lose! Paper beats Rock");
@@ -90,12 +90,31 @@ function game(){
     }
 }
 
+function decide(playerCount, compCount){
+    if (playerCount == 5 && compCount < 5){
+        score.textContent = `Player: ${playerCount} Computer: ${compCount}`;
+        decision.textContent = "Congratulations you won!!!";
+        // board.forEach((ch) => board.removeChild(ch));
+        content.appendChild(decision);   
+    }
+    else if (compCount == 5 && playerCount < 5){
+        score.textContent = `Player: ${playerCount} Computer: ${compCount}`;
+        decision.textContent = "Try again Next Time. You LOSE!!!";
+        // board.forEach((ch) => board.removeChild(ch));
+        content.appendChild(decision);
+    }
+    else{
+        content.removeChild(decision);
+    }
+
+}
 // DOM MANIPULATION
 
 let playerCount = 0, compCount = 0;
 const score = document.createElement('div');
 const decision = document.createElement('h1');
 const board = document.querySelector('.board');
+const content = document.querySelector('.content');
 const player = document.createElement('h2');
 const comp = document.createElement('h2');
 player.textContent = 'You play: ';
@@ -109,6 +128,7 @@ const buttons = Array.from(document.querySelectorAll('button'));
 buttons.forEach((button) => {
     
     button.addEventListener('click', () => {
+        // button.style.color = 'black';
         score.textContent = `Player: ${playerCount} Computer: ${compCount}`;
         while (playerCount <= 5 || compCount <= 5){
             playerSelection = button.id;
@@ -130,26 +150,12 @@ buttons.forEach((button) => {
             console.log(compCount)
             break;
         };
-        if (playerCount == 5 && compCount < 5){
-            score.textContent = `Player: ${playerCount} Computer: ${compCount}`;
-            decision.textContent = "Congratulations you won!!!";
-            // board.forEach((ch) => board.removeChild(ch));
-            board.appendChild(decision);
-            compCount = playerCount = 0;
-
-        }else if (compCount == 5 && playerCount < 5){
-            score.textContent = `Player: ${playerCount} Computer: ${compCount}`;
-            decision.textContent = "Try again Next Time. You LOSE!!!";
-            // board.forEach((ch) => board.removeChild(ch));
-            board.appendChild(decision);
-            compCount = playerCount = 0;
-        }
+        decide(playerCount, compCount);
+        compCount = playerCount = 0;
         
-
+        
     })
-
 });
-
 
 // if ai or player is not equal to 5
 //     display the choices or gameplay

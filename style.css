@@ -1,25 +1,36 @@
 body {
+    background-color: rgb(168, 20, 161);
     color: rgb(245, 219, 219);
     box-sizing: border-box;
-    background-color: rgb(93, 93, 182);
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url("rps.jpg");
 }
+.choice {
+    display: flex;
+    justify-content: center;
+    
+}
+.btn {
+    color: aliceblue;
+    margin: 5px;
+    height: 220px;
+    width: 150px;
+    background-color:rgb(117, 21, 141);
 
+}
+.btn p{
+    font-size: x-large;
+}
 .main {
     display: flex;
     justify-content: center;
 }
-
-button {
-    margin: 10px 20px;
-
-}
-
 .board {
     padding-top: 5px;
     margin:30px 150px;
     min-height: 150px;
     margin-top: 10px;
-    background-color: rgb(168, 173, 173);
+    background-color: rgb(190, 80, 190);
     color: black;
 }
