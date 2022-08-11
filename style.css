@@ -16,9 +16,10 @@ button {
 }
 
 .board {
+    padding-top: 5px;
     margin:30px 150px;
     min-height: 150px;
     margin-top: 10px;
-    background-color: azure;
+    background-color: rgb(168, 173, 173);
     color: black;
 }
