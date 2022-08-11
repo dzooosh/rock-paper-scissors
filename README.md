@@ -1,15 +1,7 @@
-## Building the rock paper scissors game
+# Building the rock paper scissors game
 
-<ul>
-    <li> DOM manipulation with javaScript</li>
-    <li> Git branching</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
 
-# Todos
+## Todos
 <ul>
     <li>Create a blank HTML document with a script tag (Hint: it is best practice to link an external .js file). This game is going to be played completely from the console, so don’t worry about putting anything else in there.</li>
     <li>
@@ -26,4 +18,13 @@ Make your function’s playerSelection parameter case-insensitive (so users can 
     <li>Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked.</li>
     <li>Add a div for displaying results and change all of your console.logs into DOM methods.
 Display the running score, and announce a winner of the game once one player reaches 5 points.</li>
+</ul>
+<h3> What I learnt in this project </h3>
+<ul>
+    <li> DOM manipulation with javaScript</li>
+    <li> Git branching</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
 </ul>
